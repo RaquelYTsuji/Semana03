@@ -2,6 +2,7 @@ package onboard.raquel.Semana03.service;
 
 import lombok.RequiredArgsConstructor;
 import onboard.raquel.Semana03.domain.Anime;
+import onboard.raquel.Semana03.exception.BadRequestException;
 import onboard.raquel.Semana03.mapper.AnimeMapper;
 import onboard.raquel.Semana03.repository.AnimeRepository;
 import onboard.raquel.Semana03.requests.AnimePostRequestBody;
@@ -27,7 +28,7 @@ public class AnimeService {
 
     public Anime findByIdOrThrowBadRequestException(long id){
         return animeRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Anime not Found"));
+                .orElseThrow(() -> new BadRequestException("Anime not Found"));
     }
 
     public Anime save(AnimePostRequestBody animePostRequestBody) {
