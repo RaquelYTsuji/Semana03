@@ -2,3 +2,11 @@ server:
   error:
     include-stacktrace: on_param
 
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/onboarding3?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
