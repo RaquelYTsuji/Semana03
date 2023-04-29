@@ -4,9 +4,10 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/onboarding3?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    url: jdbc:postgresql://localhost:5432/onboarding3?createDatabaseIfNotExist=true
     username: postgres
     password: postgres
   jpa:
     hibernate:
       ddl-auto: update
+    show-sql: true
