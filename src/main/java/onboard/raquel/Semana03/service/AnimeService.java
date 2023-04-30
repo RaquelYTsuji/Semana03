@@ -1,5 +1,6 @@
 package onboard.raquel.Semana03.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import onboard.raquel.Semana03.domain.Anime;
 import onboard.raquel.Semana03.exception.BadRequestException;
@@ -31,6 +32,7 @@ public class AnimeService {
                 .orElseThrow(() -> new BadRequestException("Anime not Found"));
     }
 
+    @Transactional
     public Anime save(AnimePostRequestBody animePostRequestBody) {
         return animeRepository.save(AnimeMapper.INSTANCE.toAnime(animePostRequestBody));
     }
